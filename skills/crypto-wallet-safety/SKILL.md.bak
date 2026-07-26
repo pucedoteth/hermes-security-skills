@@ -16,16 +16,16 @@ Use this when the user mentions sending crypto, connecting a wallet, signing a t
 ## Procedure
 1. Ask the user what action they are about to take (send, connect, sign, swap).
 2. If sending: ask them to verify the recipient address character-by-character. Warn about clipboard hijacking.
-3. Run the address validator: `python scripts/validate_address.py <address>` to check format and length.
-4. If connecting: ask what site/app is requesting the connection. Check if it is a known phishing domain.
-5. If signing: explain exactly what the signature authorizes. Warn if it is an "approve all" or unlimited token allowance.
+3. Run the address validator script: `python scripts/validate_address.py <address>` to check format and length.
+4. If connecting: ask what site/app is requesting the connection. Check if it's a known phishing domain.
+5. If signing: explain exactly what the signature authorizes. Warn if it's an "approve all" or unlimited token allowance.
 6. If swapping: verify the token contract address on a block explorer (Etherscan, etc.).
 
 ## Pitfalls
 - **Clipboard hijacking**: Malware swaps copied addresses. Always verify the first and last 6 characters visually.
 - **Fake block explorers**: Scammers create lookalike sites. Only use etherscan.io, bscscan.com, etc.
-- **Unlimited approvals**: Never sign "approve for all" unless it is a trusted DEX. Use limited amounts.
-- **Gasless signatures**: Some scams use gasless signatures to drain wallets without a transaction. Never sign raw messages you do not understand.
+- **Unlimited approvals**: Never sign "approve for all" unless it's a trusted DEX. Use limited amounts.
+- **Gasless signatures**: Some scams use gasless signatures to drain wallets without a transaction. Never sign raw messages you don't understand.
 
 ## Verification
 Ask the user to confirm they have double-checked the address/contract before proceeding.
